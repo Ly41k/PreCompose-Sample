@@ -16,6 +16,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import data.MockDataRepository
+import org.koin.compose.koinInject
 
 @Composable
 fun LoginScreen(
@@ -23,6 +25,8 @@ fun LoginScreen(
     navigateToForgot: () -> Unit,
     navigateToRegister: () -> Unit
 ) {
+
+    val repo: MockDataRepository = koinInject()
 
     Column(
         modifier = Modifier.fillMaxSize().background(Color.LightGray),
@@ -32,7 +36,7 @@ fun LoginScreen(
 
         Text(
             modifier = Modifier.fillMaxWidth().padding(horizontal = 32.dp),
-            text = "LoginScreen",
+            text = repo.getMockData(),
             fontSize = 24.sp,
             textAlign = TextAlign.Center,
             color = Color.Red,

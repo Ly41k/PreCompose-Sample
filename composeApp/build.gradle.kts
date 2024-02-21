@@ -44,6 +44,9 @@ kotlin {
             api(libs.precompose)
             api(libs.precompose.koin)
             api(libs.precompose.viewmodel)
+
+            implementation(libs.koin.core)
+            implementation(libs.koin.compose)
         }
     }
 }
